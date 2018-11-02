@@ -1,0 +1,195 @@
+<!--By Andy Nguyen-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Functions Example</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $('.btn.addclass').click(function(){
+                $('p.addclass').addClass("red")
+            })
+
+            $('.btn.slidetoggle').click(function(){
+                $('#cat1').slideToggle("slow", function(){
+                    //animation complete
+                });
+            })
+
+            $('.btn.append').click(function(){
+                $('h1.append').append("<p>(✿◠‿◠)</p>");
+            })
+
+            $('.btn.hide').click(function(){
+                $('#cat2').hide();
+            })
+
+            $('.btn.show').click(function(){
+                $('#cat2').show();
+            })
+
+            $('.btn.toggle').click(function(){
+                $('#cat3').toggle();
+            })
+
+            $('.btn.slidedown').click(function() {
+                $( "#cat4" ).slideDown("slow", function(){
+                    // Animation complete.
+                });
+            });
+
+            $('.btn.slideup').click(function() {
+                $( "#cat4" ).slideUp("slow", function(){
+                    // Animation complete.
+                });
+            });
+
+            $('.btn.fadein').click(function() {
+                $( "#cat5" ).fadeIn("slow", function(){
+                    // Animation complete.
+                });
+            });
+
+            $('.btn.fadeout').click(function() {
+                $( "#cat5" ).fadeOut("slow", function(){
+                    // Animation complete.
+                });
+            });
+
+            $('.btn.before').click(function() {
+                $("p.before").before("One Ring to rule them all, " );
+            })
+
+            $('.btn.after').click(function() {
+                $("p.after").after(" to find them.");
+            })
+
+            $('.btn.html').click(function() {
+                $("p.html").html("...to get to the other side.");
+            })
+
+            $('.btn.text').click(function() {
+                var str = $("div.container h3").text();
+                $("p.text2").html(str);
+            })
+
+            $('.btn.attr').click(function() {
+                var color = $("p.attr span").attr("title");
+                $("p.attr2").text(color);   
+            })
+
+
+          $('.btn.val').click(function() {
+                var value = $('.row.val input').val();
+                $("p.val2").text(value);
+         })
+
+
+        });
+    
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h3>Examples of Various jQuery Functions</h3>
+        <div class="section">
+            <h1>AddClass</h1>
+            <div class="row">
+                <button class="btn addclass">AddClass</button>
+                <p class="addclass">Click the button to add class 'red' to this paragraph</p>
+            </div>
+        </div>
+        <div class="section">
+            <h1>Slidetoggle</h1>
+            <div class="row">
+                <button class="btn slidetoggle">Slidetoggle</button>
+                <p class="slidetoggle">Click the button to slidetoggle the hidden cat</p>
+                <p><img id="cat1" src="https://kittentoob.com/wp-content/uploads/2018/01/A-fluffy-cat-looking-funny-surprised-or-concerned.jpg" alt="cat picture"></p>
+            </div>
+        </div>
+        <div class="section">
+            <h1 class="append">Append</h1>
+            <div class="row">
+                <button class="btn append">Append</button>
+                <p class="append">Click the button to make the title happy</p>
+            </div>
+        </div>
+        <div class="section">
+            <h1>Hide and Show</h1>
+            <div class="row">
+                <button class="btn hide">Hide</button>
+                <p class="hide">Click Hide to hide the grumpy cat. Click Show to make it appear</p>
+                <button class="btn show">Show</button>
+                <p><img id="cat2" src="http://blogs-images.forbes.com/clareoconnor/files/2017/09/grumpy-cat-GettyImages-519250942-1200x800.jpg" alt="cat picture"></p>
+            </div>
+        </div>
+        <div class="section">
+            <h1>Toggle</h1>
+            <div class="row">
+                <button class="btn toggle">Toggle</button>
+                <p class="toggle">Click the button to toggle the cat.</p>
+                <p><img id="cat3" src="https://fthmb.tqn.com/cD0PNhMM0BxevlBvAgD1ntpQLac=/3558x2363/filters:fill(auto,1)/Cat-rolling-GettyImages-165893132-58ac5ef05f9b58a3c90a144f.jpg"></p>
+            </div>
+        </div>
+        <div class="section">
+            <h1>SlideDown and SlideUp</h1>
+            <div class="row">
+                <button class="btn slidedown">SlideDown</button>
+                <p class="slidedown slideup">Click Slidedown to slide down the cat. Click Slideup to slide it back up.</p>
+                <button class="btn slideup">SlideUp</button>
+                <p><img id="cat4" src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.petmd.com%2Fsites%2Fdefault%2Ffiles%2Fpetmd-cat-happy-13.jpg&f=1"></p>
+            </div>
+        </div>
+        <div class="section">
+            <h1>FadeIn and FadeOut</h1>
+            <div class="row">
+                <button class="btn fadein">FadeIn</button>
+                <p class="fadein fadeout">Click FadeIn to fade in the cat. Click FadeOut to fade out the cat.</p>
+                <button class="btn fadeout">FadeOut</button>
+                <p><img id="cat5" src="http://best-wallpaper.net/wallpaper/2560x1440/1410/Cat-butterfly-jumping-grass_2560x1440.jpg"></p>
+            </div>
+        </div>
+        <div class="section">
+            <h1>Before and After</h1>
+            <div class="row">
+                <button class="btn before">Before</button>
+                <p>Click Before to view the first part of the excerpt. Click After to view the second part.</p>
+                <button class="btn after">After</button>
+                <p class="before after">...One Ring...</p>
+            </div>
+        </div>
+        <div class="section">
+            <h1>HTML</h1>
+            <div class="row">
+                <button class="btn html">Reveal Answer</button>
+                <p class="html">Why did the chicken cross the road?</p>
+            </div>
+        </div>
+        <div class="section text">
+            <h1>Text, Attr, and Val</h1>
+            <h5>Click the buttons to reveal the answers.</h5>
+            <div class="row text">
+                <button class="btn text">Text</button>
+                <p class="text">Take the title text, strip the HTML, and paste it here:</p>
+                <p class="text2"></p>
+            </div>
+            <div class="row attr">
+                <button class="btn attr">Attr</button>
+                <p class="attr"><span title="blue">What is the color of this sentence?</span></p>
+                <p class="attr2"></p>
+            </div>
+            <div class="row val">
+                <button class="btn val">Val</button>
+                <p class="val">What's listed in the red input box? It's too small to read.</p>
+                <input type="text" value="so many cats!" class="val">
+                <p class="val2"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
